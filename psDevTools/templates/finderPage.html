@@ -1,0 +1,303 @@
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+            <div class="form-group row fix-label-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fix-label-item" id="basic-addon3" style="background-color: rgba(0,0,0,.03);"><small>Process</small></span>
+                    </div>
+                    <select class="custom-select" id="process" name="process" autofocus required>
+                        <option value="">-Select Process-</option>
+                    </select>
+                </div>
+                <span id="emailHelp" class="form-text text-muted" style="font-size: x-small;">Select the Process where you will perform the search.</span>
+            </div>
+            <div class="form-group row">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"
+                            style="background-color: rgba(0,0,0,.03);"><small>Search</small></span>
+                    </div>
+
+                    <input type="text" class="form-control h-100 border-right-0" id="search"
+                        aria-describedby="String to find">
+
+                    <div class="input-group-append">
+                        <span class="input-group-text bg-white">
+                            <small id="searchHelp" class="form-text text-muted float-right">
+                                <div class="custom-control custom-switch text-right float-right"
+                                    data-toggle="tooltip" data-placement="bottom"
+                                    title="Case Sensitive">
+                                    <input type="checkbox" class="custom-control-input form-control"
+                                        id="case-sensitive">
+                                    <label class="custom-control-label" for="case-sensitive">
+                                        <img src="/plugin/psDevTools/images/upper-and-lower-case-a-letter.png"
+                                            class="iconsMenu pt-1" id="pills-settings-img">
+                                    </label>
+                                </div>
+                            </small>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="d-block">
+                    <span id="searchHelp" class="form-text text-muted float-left"
+                        style="font-size: x-small;">Type the word or characters you want to search <b
+                            class=""> (the highlight code is case sensitive)</b></span>
+                </div>
+            </div>
+        </div>
+        <!-- Filter -->
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 box">
+            <div class="form-group">
+                <!-- <label for="filter">Filter</label> -->
+                <div class="card mb-0">
+                    <div class="card-header">
+                        <span class="float-left small">Filter</span>
+                        <div class="custom-control custom-switch text-right">
+                            <input type="checkbox" class="custom-control-input" id="filter-all">
+                            <label class="custom-control-label small pt-1" for="filter-all">Select
+                                All</label>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-dynaforms">
+                            <label class="custom-control-label small"
+                                for="filter-dynaforms">Dynaform</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-document">
+                            <label class="custom-control-label small" for="filter-document">Output Document</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-trigger">
+                            <label class="custom-control-label small"
+                                for="filter-trigger">Triggers</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-step">
+                            <label class="custom-control-label small" for="filter-step">Steps
+                                Conditions</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input"
+                                id="filter-step-trigger">
+                            <label class="custom-control-label small" for="filter-step-trigger">Triggers
+                                Conditions</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-flow">
+                            <label class="custom-control-label small" for="filter-flow">Flows
+                                Conditions</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-variable">
+                            <label class="custom-control-label small"
+                                for="filter-variable">Variables</label>
+                        </div>
+                        <div
+                            class="custom-control custom-checkbox col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                            <input type="checkbox" class="custom-control-input" id="filter-input-document">
+                            <label class="custom-control-label small"
+                                for="filter-input-document">Input Document</label>
+                        </div>
+                    </div>
+                </div>
+                <div class=" text-muted" style="font-size: x-small;">Press <b>Ctrl+A</b> to
+                    Select/Deselect All</div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
+            <button type="button" class="btn btn-info w-100" onclick="SearchParameter()">
+                <i class="fa fa-search"></i>
+                Search
+            </button>
+            <div class=" text-muted" style="font-size: x-small;">Press <b>Ctrl+Enter</b> to Search</div>
+        </div>
+    </div>
+</div>
+
+<!-- Results -->
+<div class="row" id="results" style="position: sticky;top:0px;z-index: 3;background-color: white;">
+    <div class="col-12" id="resume-result">
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('dynaformCard', 'collapseDynaformResults');return false;" id="btn-dynaformCard">Dynaforms</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('triggerCard', 'collapseTriggersResults');return false;" id="btn-triggerCard">Triggers</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('outputDocumentCard', 'collapseOutputDocumentResult');return false;" id="btn-outputDocumentCard">Output Documents</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('stepCard', 'collapseStepResults');return false;" id="btn-stepCard">Steps Conditions</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('stepTriggerCard', 'collapseStepTriggerResults');return false;" id="btn-stepTriggerCard">Triggers Conditions</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('flowsConditionsCard', 'collapseFlowsConditionsResults');return false;" id="btn-flowsConditionsCard">Flows Conditions</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('variablesCard', 'collapseVariablesResults');return false;" id="btn-variablesCard">Variables</a>
+        <a class="btn btn-light btn-sm" href="#" onclick="scrollToAnchor('inputDocumentCard', 'collapseInputDocumentResult');return false;" id="btn-inputDocumentCard">Input Documents</a>
+    <!-- </div>
+    <div class="col-2 text-right"> -->
+        <button type="button" class="btn btn-light btn-sm float-right"
+            onclick="$('.collapse').collapse('show')">Expand All</button>
+        <button type="button" class="btn btn-light btn-sm float-right"
+            onclick="$('.collapse').collapse('hide')">Collapse All</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Dynaforms -->
+        <div class="card" id="dynaformCard">
+            <div class="card-header link-header" data-toggle="collapse" href="#collapseDynaformResults">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="dynaformTitleCard">Dynaforms</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseDynaformResults">
+                <div id="dynaformResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Triggers -->
+        <div class="card" id="triggerCard">
+            <div class="card-header link-header" data-toggle="collapse" href="#collapseTriggersResults">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="triggerTitleCard">Triggers</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseTriggersResults">
+                <div id="triggerResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Output Document -->
+        <div class="card" id="outputDocumentCard">
+            <div class="card-header link-header" data-toggle="collapse"
+                href="#collapseOutputDocumentResult">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="outputDocumentTitleCard">Output Document</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseOutputDocumentResult">
+                <div id="outputDocumentResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Steps -->
+        <div class="card" id="stepCard">
+            <div class="card-header link-header" data-toggle="collapse" href="#collapseStepResults">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="stepTitleCard">Steps</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseStepResults">
+                <div id="stepResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Steps Trigger -->
+        <div class="card" id="stepTriggerCard">
+            <div class="card-header link-header" data-toggle="collapse"
+                href="#collapseStepTriggerResults">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="stepTriggerTitleCard">Steps Trigger</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseStepTriggerResults">
+                <div id="stepTriggerResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Flows Conditions -->
+        <div class="card" id="flowsConditionsCard">
+            <div class="card-header link-header" data-toggle="collapse"
+                href="#collapseFlowsConditionsResults">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="flowsConditionsTitleCard">Flows Conditions
+                </h5>
+            </div>
+            <div class="car-body collapse show" id="collapseFlowsConditionsResults">
+                <div id="flowsConditionsResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Variables -->
+        <div class="card" id="variablesCard">
+            <div class="card-header link-header" data-toggle="collapse"
+                href="#collapseVariablesResults">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="variablesTitleCard">Variables</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseVariablesResults">
+                <div id="variablesResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Input Document -->
+        <div class="card" id="inputDocumentCard">
+            <div class="card-header link-header" data-toggle="collapse"
+                href="#collapseInputDocumentResult">
+                <i class="fa fa-sort float-right"></i>
+                <h5 class="card-title text-secondary" id="inputDocumentTitleCard">Input Document</h5>
+            </div>
+            <div class="car-body collapse show" id="collapseInputDocumentResult">
+                <div id="inputDocumentResult"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<!-- View Detail [Code] -->
+<div id="viewModalDevTools" class="modalDevTool1">
+    <div class="modal-contenido1">
+        <div style="padding-left: 10; padding-right: 10; padding-top: 10;">
+            <a href="#" id="closeModalDevTools" class="float-right fuschia link-text" style="font-family: monospace;">
+                <b>[Close]</b>
+            </a>
+            <h4 id="titleModal" class="white"></h4>
+            <p id="descriptionModal" class="grey"></p>
+        </div>
+        <textarea name="result-code-detail" id="result-code-detail" cols="30" rows="10"></textarea>
+    </div>
+</div>
+<!-- Task Detail -->
+<div id="viewModalTaskDevTools" class="modalDevTool2">
+    <div class="modal-contenido2">
+        <div style="padding-left: 10; padding-right: 10; padding-top: 10;">
+            <a href="#" id="closeModalTaskDevTools" class="close-btn float-right fuschia link-text" style="font-family: monospace;">
+                <b>[Close]</b>
+            </a>
+            <h4 id="titleModalTask" class="white"></h4>
+            <p id="descriptionModalTask" class="grey"></p>
+        </div>
+        <div id="taskDetail" style="height: 90%; overflow-y: scroll;"></div>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<a id="back2Top" title="Back to top" href="#">&#10148;</a>

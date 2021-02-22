@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>DevTools</title>
+    <link rel="shortcut icon" href="/plugin/psDevTools/images/favicon.ico" type="image/x-icon">
+    <meta name="author" content="Telmo Chiri - Ronald Nina"/>
+    <meta name="Description" content="Developer Tools to ProcessMaker."/>
+    <script type="text/javascript" src="/plugin/psDevTools/js/jquery/jquery-1.7.2.min.js"></script>
+
+    <script src="/plugin/psDevTools/js/jquery.terminal/jquery.terminal.js"></script>
+    <link rel="stylesheet" href="/plugin/psDevTools/css/jquery.terminal/jquery.terminal.min.css">
+    <link rel="stylesheet" href="/plugin/psDevTools/css/myStylesTerm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {literal}
+    <script>
+        function greetings(term) {
+            term.clear();
+            term.echo('DevTools Authentication');
+            term.echo(' - Process Maker -');
+            term.echo('Press [[b;#fff;]CTRL+D] to quit\n');
+        }
+        function clearTerm(term) {
+            term.clear();
+            headTerminal(term);
+        }
+        function authenticated(term) {
+            $('.tv').addClass('collapse');
+            term.disable();
+            // window.location = "https://epic14.processmaker.net/sysboliviaTecnologica/en/telmix/psDevTools/devToolsPage";
+            // window.location = "../psDevTools/devToolsPage";
+            window.location = "../psDevTools/index";
+        }
+        function headTerminal(term) {
+            term.echo('DevTools Authentication');
+            term.echo('Type [[b;#fff;]help] to display help');
+            term.echo('Type [[b;#fff;]info] to get Server Information');
+            term.echo('Type [[b;#fff;]login] to authenticate in DevTools');
+            term.echo('\n');
+        }
+        // Primera Forma
+        jQuery(function($, undefined) {
+            $('#term').terminal(function(command, term) {
+                if (command !== '') {
+                    try {
+                        if (command.match(/^\s*authenticated\s*$/)) {
+                            authenticated(term);
+                        } else if (command.match(/^\s*show\s*$/)) {
+                            clearTerm(term);
+                        }else if (command == 'help') {
+                            this.echo('Available commands: info, clear, show, login, help\n');
+                        }else if (command == 'info') {
+                            $.jrpc("../psDevTools/controllers/devTools-login.php",
+                                "info",
+                                [command],
+                                function(data) {
+                                    if (data && typeof data === 'object') {
+                                        var str = Object.keys(data.result).map(function(key) {
+                                            return '[[b;#fff;]' + key + ']: ' + data.result[key];
+                                        }).join('\n');
+                                        term.echo('\n'+str+'\n');
+                                    }
+                                });
+                        } else if (command == 'login') {
+                            greetings(term);
+                            term.set_mask(true);
+                            term.push(function(command, term) {
+                            term.pause();
+                            $.jrpc("../psDevTools/controllers/devTools-login.php",
+                                "authenticate",
+                                [command],
+                                function(data) {
+                                term.resume();
+                                if (data.error) {
+                                    if (data.error.error && data.error.error.message) {
+                                        term.error(data.error.error.message); // php error
+                                    } else {
+                                        term.error(data.error.message); // json rpc error
+                                    }
+                                } else {
+                                    if (typeof data.result == 'boolean') {
+                                        if (data.result) {
+                                            term.echo('Success');
+                                            authenticated(term);
+                                        } else {
+                                            term.error('Password Incorrect, please try again');
+                                        }
+                                    } else {
+                                        // var len = data.result.length;
+                                        // for(var i=0;i<len; ++i) {
+                                        //     term.echo(data.result[i].join(' | '));
+                                        // }
+                                    }
+                                }
+                                },
+                                function(xhr, status, error) {
+                                term.error('[AJAX] ' + status +
+                                            ' - Server reponse is: \n' +
+                                            xhr.responseText);
+                                            term.resume();
+                                    }); // rpc call
+                            }, {
+                                prompt: "password: "
+                            }
+                            );
+                        } else {
+                            term.error("unknow command " + command + "\n");
+                        }
+
+                    } catch(e) {
+                        this.error(new String(e));
+                    }
+                } else {
+                    this.echo('');
+                }
+            }, {
+                greetings: '',
+                name: 'js_demo',
+                prompt: 'devTools> ',
+                onInit: function() {
+                    headTerminal(this);
+                },
+                onClear: function() {
+                    headTerminal(this);
+                },
+                keymap: {
+                        'CTRL+D': function(e, original) {
+                            original();
+                            this.set_mask(false);
+                            clearTerm(this);
+                        }
+                }
+            });
+        });
+    </script>
+    {/literal}
+  </head>
+<body class="tv">
+
+    <pre style="background-color: #171818; color: #aaa; margin: 0;">
+     ____           ______            __
+    / __ \___ _   _/_  __/___  ____  / /____
+   / / / / _ \ | / // / / __ \/ __ \/ / ___/
+  / /_/ /  __/ |/ // / / /_/ / /_/ / (__  )
+ /_____/\___/|___//_/  \____/\____/_/____/
+ Copyright (c) 2020-2021 Telmo C. Ronald N.
+    </pre>
+    <div id="term"></div>
+    <div class="flicker"></div>
+    <div class="scanlines"></div>
+</body>
+</html>

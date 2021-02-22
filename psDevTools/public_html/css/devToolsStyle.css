@@ -1,0 +1,358 @@
+/*Font*/
+.font-body {
+    font-family: "DaxRegular",Arial,Helvetica,verdana,FreeSans,"Bitstream Vera Sans",sans-serif;
+}
+.card {
+    margin-bottom: 20;
+}
+.table{
+    margin-bottom: 0;
+}
+.fix-label-group {
+    align-items: center;
+}
+
+.fix-label-item {
+    height: calc(2.25rem + 2px);
+}
+
+.custom-select > option {
+    font-size: 80% !important;
+}
+/* Link */
+.link-text {
+    cursor: pointer;
+}
+.link-text:hover {
+    color: #FFF;
+    background-color: #000;
+    text-decoration: none;
+}
+
+.link-header {
+    cursor: pointer;
+}
+.link-header:hover {
+    background-color: #ffffff2b;
+}
+
+.white {
+    color: #f8f8f2;
+}
+
+.grey {
+    color: #999999;
+}
+
+.blue {
+    color: #66d9ef;
+}
+
+.green {
+    color: #a6e22e;
+}
+
+.orange {
+    color: #fd971f;
+}
+
+.fuschia {
+    color: #ec007c;
+}
+
+.yellow {
+    color: #efe158;
+}
+
+.purple {
+    color: #ae81ff;
+}
+
+.red {
+    color: #E23245;
+}
+
+/* Modal */
+.modalDevTool1-contenido{
+    background-color:aqua;
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+  }
+.modalDevTool1{
+    background-color: rgba(0,0,0,.9);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+    z-index: 5;
+}
+.modalDevTool2-contenido{
+    background-color:aqua;
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+  }
+.modalDevTool2{
+    background-color: rgba(0,0,0,.9);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+    z-index: 10;
+}
+#viewModalDevTools:target{
+    opacity:1;
+    pointer-events:auto;
+}
+#viewModalTaskDevTools:target{
+    opacity:1;
+    pointer-events:auto;
+}
+
+#tableSqlResponse thead th{
+    font-size: 80%;
+    font-weight: bold;
+}
+#tableSqlResponse td{
+    font-size: 80%;
+    font-weight: 400;
+}
+
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 4;
+    display: none;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    background-color: #060606b8;
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+#back2Top:hover {
+    background-color: rgba(0, 0, 0, 0.776);
+    color: #ffc107;
+}
+/***
+** Table Response SQL CONSOLSE
+**/
+
+.tableSqlResponse thead tr th{
+    position: sticky;
+    top: 0;
+    background-color: #343a40;
+}
+
+.tableSqlResponse thead tr th{
+    border-bottom-width: 2px !important;
+}
+/* .tableSqlResponse tbody tr:nth-child(2n) td:nth-child(8n+1),.tableSqlResponse tbody tr:nth-child(2n) td:nth-child(8n+2) {
+    background-color: #343a40;
+} */
+
+/* .tableSqlResponse tbody tr:nth-child(2n+1) td:nth-child(8n+1) {
+    background-color: #343a40;
+} */
+
+
+/* .tableSqlResponse tbody tr:nth-child(2n+1) td:nth-child(8n+1),.tableSqlResponse tbody tr:nth-child(2n+1) td:nth-child(8n+2) {
+    background-color: #3e444a;
+} */
+
+ .tableSqlResponse tbody tr td:nth-child(1),.tableSqlResponse thead tr th:nth-child(1) {
+    position: sticky;
+    width: 40px;
+    left: 0;
+    border: #454d55 1px solid;
+    z-index: 10;
+    background-color: #343a40;
+
+}
+/* .tableSqlResponse tbody tr td:nth-child(2),.tableSqlResponse thead tr th:nth-child(2) {
+    position: sticky;
+    left: 38px;
+    border: #454d55 1px solid;
+    z-index: 10;
+} */
+.tableSqlResponse tbody tr:hover td{
+    background-color: #43494e !important;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+1) {
+    color: #f8f8f2;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+2) {
+    color: #999999;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+3) {
+    color: #66d9ef;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+4) {
+    color: #a6e22e;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+5) {
+    color: #fd971f;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+6) {
+    color: #ec007c;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+7) {
+    color: #efe158;
+}
+
+.tableSqlResponse tbody tr td:nth-child(8n+8) {
+    color: #ae81ff;
+}
+
+
+/* Coffe Loader */
+.cssload-coffee {
+	text-align:left;
+	height: 49px;
+	width: 39px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: absolute;
+	left: 50%;
+	z-index: 999;
+	background: linear-gradient(to bottom left, rgb(247,148,30), rgb(194,108,7));
+		background: -o-linear-gradient(to bottom left, rgb(247,148,30), rgb(194,108,7));
+		background: -ms-linear-gradient(to bottom left, rgb(247,148,30), rgb(194,108,7));
+		background: -webkit-linear-gradient(to bottom left, rgb(247,148,30), rgb(194,108,7));
+		background: -moz-linear-gradient(to bottom left, rgb(247,148,30), rgb(194,108,7));
+}
+.cssload-coffee:before {
+	position: absolute;
+	content: "";
+	right: -15px;
+	top: 5px;
+	height: 24px;
+	width: 10px;
+	background: transparent;
+	border: 5px solid rgb(247,148,30);
+	border-left: 5px solid transparent;
+	border-bottom: 5px solid rgb(231,129,8);
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	z-index: 1;
+}
+.cssload-coffee:after {
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 29px;
+	background: rgb(225,225,225);
+	border-radius: 4px;
+	top: -29px;
+	box-shadow: 34px 0px 0 rgb(225,225,225), 17.5px -15px 0 rgb(225,225,225);
+	opacity: 1;
+	animation: cssload-steam 1.35s ease infinite;
+		-o-animation: cssload-steam 1.35s ease infinite;
+		-ms-animation: cssload-steam 1.35s ease infinite;
+		-webkit-animation: cssload-steam 1.35s ease infinite;
+		-moz-animation: cssload-steam 1.35s ease infinite;
+}
+
+
+
+@keyframes cssload-steam {
+	100% {
+		top: -39px;
+		background: rgb(238,238,238);
+		box-shadow: 34px 0px 0 rgb(238,238,238), 17.5px -15px 0 rgb(238,238,238);
+		opacity: 0.25;
+	}
+}
+
+@-o-keyframes cssload-steam {
+	100% {
+		top: -39px;
+		background: rgb(238,238,238);
+		box-shadow: 34px 0px 0 rgb(238,238,238), 17.5px -15px 0 rgb(238,238,238);
+		opacity: 0.25;
+	}
+}
+
+@-ms-keyframes cssload-steam {
+	100% {
+		top: -39px;
+		background: rgb(238,238,238);
+		box-shadow: 34px 0px 0 rgb(238,238,238), 17.5px -15px 0 rgb(238,238,238);
+		opacity: 0.25;
+	}
+}
+
+@-webkit-keyframes cssload-steam {
+	100% {
+		top: -39px;
+		background: rgb(238,238,238);
+		box-shadow: 34px 0px 0 rgb(238,238,238), 17.5px -15px 0 rgb(238,238,238);
+		opacity: 0.25;
+	}
+}
+
+@-moz-keyframes cssload-steam {
+	100% {
+		top: -39px;
+		background: rgb(238,238,238);
+		box-shadow: 34px 0px 0 rgb(238,238,238), 17.5px -15px 0 rgb(238,238,238);
+		opacity: 0.25;
+	}
+}
+
+/***
+* bootbox Style
+*
+**/
+
+.bootbox .modal-header h4{
+    font-size: 1rem;
+}
+
+.bootbox .modal-header{
+    position: relative;
+}
+
+.bootbox .modal-header button{
+    right: 20px;
+    position: absolute;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+
+  .bootbox-input-text{
+    -webkit-text-security: disc;
+  }
